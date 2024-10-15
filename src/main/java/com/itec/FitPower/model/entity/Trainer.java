@@ -3,10 +3,12 @@ package com.itec.FitPower.model.entity;
 import com.itec.FitPower.util.Person;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "trainers")
@@ -20,5 +22,4 @@ public class Trainer extends Person {
     @ManyToOne
     @JoinColumn(name = "gym_id")
     private Gym gym;
-
 }

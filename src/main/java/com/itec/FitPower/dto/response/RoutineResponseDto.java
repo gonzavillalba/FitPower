@@ -11,6 +11,7 @@ import java.util.List;
 
 @Data
 public class RoutineResponseDto {
+    private Long id;
     private Client client;
     private Trainer trainer;
     private String routineCode;
@@ -18,6 +19,6 @@ public class RoutineResponseDto {
     private LocalDate creationDate;
     private  LocalDate startDate;
     private boolean active;
-    private List<Session> sessions;
+    private List<SessionResponseDto> sessions;
     private Status status;
 }

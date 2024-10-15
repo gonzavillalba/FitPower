@@ -1,6 +1,6 @@
 package com.itec.FitPower.model.service.impl;
 
-import com.itec.FitPower.dto.request.TrainerRequestDto;
+import com.itec.FitPower.dto.request.TrainerRequestDTO;
 import com.itec.FitPower.dto.response.TrainerResponseDto;
 import com.itec.FitPower.model.service.TrainerService;
 
@@ -8,12 +8,12 @@ import java.util.List;
 
 public class TrainerServiceImpl implements TrainerService {
     @Override
-    public TrainerResponseDto create(TrainerRequestDto trainerRequestDto) {
+    public TrainerResponseDto create(TrainerRequestDTO trainerRequestDto) {
         return null;
     }
 
     @Override
-    public TrainerResponseDto update(TrainerRequestDto trainerRequestDto) {
+    public TrainerResponseDto update(TrainerRequestDTO trainerRequestDto) {
         return null;
     }
 

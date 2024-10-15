@@ -25,7 +25,6 @@ public class Session {
     private Exercise exercise;
     @ManyToOne
     @JoinColumn(name = "routine_id")
-    @JsonBackReference  // Rompemos la referencia para evitar la recursión
     private Routine routine;
     @ManyToOne
     @JoinColumn(name = "training_diary_id")

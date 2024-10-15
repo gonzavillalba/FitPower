@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class TrainerRequestDto {
+public class TrainerRequestDTO {
     private Long id;
     private String name;
     private String surname;

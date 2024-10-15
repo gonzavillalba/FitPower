@@ -1,12 +1,11 @@
-package com.itec.FitPower.dto.response;
-
+package com.itec.FitPower.dto.request;
 
 import lombok.Data;
 
 import java.time.LocalTime;
 
 @Data
-public class SessionResponseDto {
+public class SessionRequestDTO {
     private Long id;
     private String trainingDay;
     private String muscleGroup;
@@ -17,4 +16,5 @@ public class SessionResponseDto {
     private boolean completed;
     private String exerciseName;
     private String routineName;
+
 }

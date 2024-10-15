@@ -3,10 +3,12 @@ package com.itec.FitPower.model.entity;
 import com.itec.FitPower.util.Person;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "clients")

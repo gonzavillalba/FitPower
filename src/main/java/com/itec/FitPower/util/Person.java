@@ -6,6 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @MappedSuperclass
 @Data
 public abstract class Person {
@@ -19,6 +21,7 @@ public abstract class Person {
     private String address;
     private String email;
     private boolean active;
+    private LocalDateTime registrationDate;
 
 
 
