@@ -28,7 +28,7 @@ public class NutritionalPlan {
     private Double dailyCalories;
     private boolean active;
     @OneToMany(mappedBy = "nutritionalPlan")
-    private List<Foot>footList = new ArrayList<>();
+    private List<Food> foods = new ArrayList<>();
     @Enumerated(EnumType.STRING)
     private Status status;
 
