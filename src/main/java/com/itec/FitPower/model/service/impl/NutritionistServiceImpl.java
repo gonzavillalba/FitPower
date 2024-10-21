@@ -10,6 +10,7 @@ import com.itec.FitPower.util.CRUD;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class NutritionistServiceImpl implements CRUD<NutritionistResponseDto, NutritionistRequestDTO> {
@@ -57,22 +58,31 @@ public class NutritionistServiceImpl implements CRUD<NutritionistResponseDto, Nu
     public void delete(String id) {
         Nutritionist nutritionist = nutritionistRepository.findById(Long.valueOf(id))
                 .orElseThrow(() -> new NotFoundException("Nutritionist not found with current id..."));
-        nutritionist.setActive(false);
-        nutritionistRepository.save(nutritionist);
+        nutritionistRepository.delete(nutritionist);
     }
 
     @Override
     public List<NutritionistResponseDto> findAll() {
-        return List.of();
+        List<Nutritionist> expedients = nutritionistRepository.findAll();
+
+        return expedients.stream()
+                .map(nutritionistMapper::convertToDto)
+                .collect(Collectors.toList());
     }
 
     @Override
     public NutritionistResponseDto findOne(String id) {
-        return null;
+        Nutritionist expedient = nutritionistRepository.findById(Long.parseLong(id))
+                .orElseThrow(() -> new NotFoundException("Couldn´t find the nutritionist with current id..."));
+        return nutritionistMapper.convertToDto(expedient);
     }
 
     @Override
     public NutritionistResponseDto disable(String id) {
-        return null;
+        Nutritionist nutritionist = nutritionistRepository.findById(Long.valueOf(id))
+                .orElseThrow(() -> new NotFoundException("Nutritionist not found with current id..."));
+        nutritionist.setActive(false);
+        nutritionistRepository.save(nutritionist);
+        return nutritionistMapper.convertToDto(nutritionist);
     }
 }
