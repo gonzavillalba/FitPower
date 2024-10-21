@@ -14,12 +14,15 @@ public class NutritionalPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
+
     @ManyToOne
     @JoinColumn(name = "nutritionist_id")
     private Nutritionist nutritionist;
+
     private String nutCode;
     private String type;
     private Date startDate;
@@ -27,8 +30,10 @@ public class NutritionalPlan {
     private String description;
     private Double dailyCalories;
     private boolean active;
+
     @OneToMany(mappedBy = "nutritionalPlan")
-    private List<Food> foods = new ArrayList<>();
+    private List<Food> foods;
+
     @Enumerated(EnumType.STRING)
     private Status status;
 

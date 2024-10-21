@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 public class NutritionistRequestDTO {
-    private Long id;
+
     private String name;
     private String surname;
     private String dni;
