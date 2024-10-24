@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -19,7 +20,7 @@ public class ClientResponseDTO {
     private String phone;
     private String address;
     private String goals;
-    private ClientStatus clientStatus;
+    private List<ClientStatus> clientStatuses;
     private String gymName;
     private LocalDateTime registrationDate;
 }

@@ -12,6 +12,9 @@ public class ClientStatus {
     private Long id;
     private Double weight;
     private Double height;
-    private Double bodymass;
-    private Double bodyfat;
+    private Double bodyMass;
+    private Double bodyFat;
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 }

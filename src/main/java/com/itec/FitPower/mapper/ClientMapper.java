@@ -29,7 +29,7 @@ public class ClientMapper {
         clientResponseDto.setAddress(client.getAddress());
         clientResponseDto.setPhone(client.getPhone());
         clientResponseDto.setEmail(client.getEmail());
-        clientResponseDto.setClientStatus(client.getInitState());
+        clientResponseDto.setClientStatuses(client.getClientStatuses());
         return clientResponseDto;
     }
 
@@ -41,7 +41,7 @@ public class ClientMapper {
         client.setAddress(dtoRequest.getAddress());
         client.setPhone(dtoRequest.getPhone());
         client.setEmail(dtoRequest.getEmail());
-        client.setInitState(dtoRequest.getClientStatus());
+        client.getClientStatuses().add(dtoRequest.getClientStatus());
         return client;
     }
 

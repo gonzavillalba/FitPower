@@ -20,10 +20,8 @@ public class Client extends Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
-    private ClientStatus initState;
-    @OneToOne
-    private ClientStatus currentState;
+    @OneToMany(mappedBy = "client")
+    private List<ClientStatus> clientStatuses;
     private String goal;
     @ManyToOne
     @JoinColumn(name = "gym_id")
