@@ -1,6 +1,5 @@
 package com.itec.FitPower.model.service.impl;
 
-import com.itec.FitPower.Exception.EntityException;
 import com.itec.FitPower.dto.request.ClientRequestDTO;
 import com.itec.FitPower.dto.response.ClientResponseDTO;
 import com.itec.FitPower.mapper.ClientMapper;
@@ -9,6 +8,7 @@ import com.itec.FitPower.model.entity.ClientStatus;
 import com.itec.FitPower.model.repository.ClientRepository;
 import com.itec.FitPower.model.repository.ClientStatusRepository;
 import com.itec.FitPower.model.service.ClientService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +25,9 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientResponseDTO create(ClientRequestDTO clientRequestDTO) {
+        if(clientRepository.findByDni(clientRequestDTO.getDni()).isPresent()){
+            throw new EntityNotFoundException("Ya existe un cliente con el código " + clientRequestDTO.getDni());
+        }
     // Crear los estados inicial y actual
     ClientStatus clientStatus = new ClientStatus();
         clientStatus.setWeight(clientRequestDTO.getClientStatus().getWeight());
@@ -80,7 +83,7 @@ public class ClientServiceImpl implements ClientService {
 
     public Client getClientByDniOrThrow(String dni){
         return clientRepository.findByDni(dni)
-                .orElseThrow(() -> new EntityException("El cliente con el dni " + dni + " no existe"));
+                .orElseThrow(() -> new EntityNotFoundException("El cliente con el dni " + dni + " no existe"));
     }
 
     @Override
