@@ -13,10 +13,11 @@ import java.util.List;
 @Entity
 @Table(name = "nutritionists")
 public class Nutritionist extends Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String profession;
     private boolean available;
-    @OneToMany(mappedBy = "nutritionist")
-    private List<NutritionalPlan> nutritionalPlanList = new ArrayList<>();
     @OneToMany(mappedBy = "nutritionist")
     private List<Client>clients = new ArrayList<>();
     @ManyToOne

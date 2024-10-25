@@ -36,8 +36,8 @@ public class Client extends Person {
     private List<Routine>routines = new ArrayList<>();
     @OneToMany(mappedBy = "client")
     private List<NutritionalPlan>nutritionalPlans = new ArrayList<>();
-    @OneToOne
-    private Record record;
+    // @OneToOne
+    // private Record record;
     @OneToMany(mappedBy = "client")
     private List<TrainingDiary>trainingDiaryList = new ArrayList<>();
     @OneToMany(mappedBy = "client")

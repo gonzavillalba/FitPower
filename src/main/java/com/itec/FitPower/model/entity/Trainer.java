@@ -13,6 +13,9 @@ import java.util.List;
 @Entity
 @Table(name = "trainers")
 public class Trainer extends Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String profession;
     private boolean available;
     @OneToMany(mappedBy = "trainer")
