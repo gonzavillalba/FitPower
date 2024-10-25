@@ -3,9 +3,11 @@ package com.itec.FitPower.model.service.impl;
 import com.itec.FitPower.dto.request.ExerciseRequestDTO;
 import com.itec.FitPower.dto.response.ExerciseResponseDTO;
 import com.itec.FitPower.model.service.ExerciseService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ExerciseServiceImpl implements ExerciseService {
     @Override
     public ExerciseResponseDTO create(ExerciseRequestDTO exerciseRequestDTO) {

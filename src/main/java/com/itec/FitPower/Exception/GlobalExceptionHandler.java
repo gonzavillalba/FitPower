@@ -32,11 +32,13 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(errors.toString());
     }
 
-    @ExceptionHandler(Exception.class)
+    /* @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<String> handleAllExceptions(Exception ex) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ha ocurrido un error inesperado.");
     }
+
+     */
 
 
 }

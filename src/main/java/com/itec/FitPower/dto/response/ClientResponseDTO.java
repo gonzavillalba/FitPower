@@ -16,11 +16,11 @@ public class ClientResponseDTO {
     private String name;
     private String lastname;
     private String dni;
-    private String email;
     private String phone;
     private String address;
-    private String goals;
-    private List<ClientStatus> clientStatuses;
+    private String email;
+    private boolean active;
+    private List<ClientStatus> statuses;
+    private String goal;
     private String gymName;
-    private LocalDateTime registrationDate;
 }

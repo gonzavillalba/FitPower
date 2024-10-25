@@ -6,18 +6,18 @@ import com.itec.FitPower.util.CRUD;
 
 import java.util.List;
 
-public interface ClientService extends CRUD<ClientResponseDTO, ClientRequestDTO> {
-    ClientResponseDto create(ClientRequestDto clientRequestDto);
+public interface ClientService{
+    ClientResponseDTO create(ClientRequestDTO clientRequestDto);
 
-    List<ClientResponseDto> findAll();
+    List<ClientResponseDTO> findAll();
 
-    ClientResponseDto findByDni(String dni);
+    ClientResponseDTO findByDni(String dni);
 
-    ClientResponseDto update(ClientRequestDto clientRequestDto, Long id);
+    ClientResponseDTO update(ClientRequestDTO clientRequestDto, Long id);
 
     void delete(String id);
 
 
-    ClientResponseDto disableClientByDni(String dni);
+    ClientResponseDTO disableClientByDni(String dni);
 
 }

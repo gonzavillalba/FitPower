@@ -6,7 +6,7 @@ import lombok.Data;
 import java.time.LocalTime;
 
 @Data
-public class SessionResponseDto {
+public class SessionResponseDTO {
     private Long id;
     private String trainingDay;
     private String muscleGroup;

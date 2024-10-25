@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientRequestDto {
+public class ClientRequestDTO {
     private Long id;
     private String name;
     private String lastname;

@@ -22,9 +22,4 @@ public abstract class Person {
     private String email;
     private boolean active;
     private LocalDateTime registrationDate;
-
-
-
-
-
 }

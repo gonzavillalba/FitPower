@@ -2,13 +2,13 @@ package com.itec.FitPower.dto.response;
 
 import com.itec.FitPower.model.entity.Client;
 import com.itec.FitPower.model.entity.Gym;
-import com.itec.FitPower.model.entity.NutritionalPlan;
+import com.itec.FitPower.model.entity.Routine;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class NutritionistResponseDto {
+public class TrainerResponseDTO {
     private Long id;
     private String name;
     private String surname;
@@ -19,7 +19,7 @@ public class NutritionistResponseDto {
     private boolean active;
     private String profession;
     private boolean available;
-    private List<NutritionalPlan> nutritionalPlanList;
+    private List<Routine> routineList;
     private List<Client>clients;
     private Gym gym;
 }
